@@ -1,0 +1,15 @@
+<%= render 'common/user_nav' %>
+
+<h1>Blogger's published posts</h1>
+
+<div class="post">
+    <%= render_post_new_button %> 
+    <%= render_author_draft_posts_button %> 
+  </div>
+  <%= render partial: "index", locals: {posts: @publish_posts} %>
+
+</div>
+
+   
+
+<%= paginate @publish_posts %>

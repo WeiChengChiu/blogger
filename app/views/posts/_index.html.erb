@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <tr>
+      <td>Title</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% posts.each do |p| %>
+      <tr>
+        <td><%= render_post_button(p) %></td>
+        <td><%= render_post_edit_button(p) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

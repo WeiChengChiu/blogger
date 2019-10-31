@@ -1,0 +1,16 @@
+<div class="span12">  
+  <div class="form-group">
+		<%= f.label :title, "title" %>
+		<%= f.text_field :title, :class => "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :description, "Description" %>
+		<%= f.text_area :description, :class => "form-control" %>
+	</div>
+
+  <div class="form-group">
+		<%= f.label :status, "Status" %>
+		<%= f.select :status, [["Draft", 0], ["Published", 1]], :class => "form-control" %>
+	</div>
+</div>

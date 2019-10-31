@@ -1,0 +1,9 @@
+<%= render 'common/user_nav' %>
+
+<div class="post">
+  <%= render_posts_button %> 
+  
+  <%= render_post_edit_button(@post) %>
+  <h2><%= render_post_title(@post) %></h2>
+  <p><%= @post.description %></p>
+</div>

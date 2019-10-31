@@ -1,0 +1,8 @@
+<div class="authorization">
+  <% if current_user %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% else %>
+    <%= link_to('Singup', new_registration_path(:user)) %>
+    <%= link_to('Signin', new_session_path(:user)) %>
+  <% end %>
+</div>

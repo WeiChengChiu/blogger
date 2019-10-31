@@ -1,0 +1,11 @@
+<%= render partial: 'error_msg' %>
+
+<div class="span12">
+	<%= form_for @post do |f| %>
+
+		<%= render partial: "form", locals: {f: f} %>
+
+		<%= f.submit "Update", disable_with: 'Submiting...', class: "btn btn-primary" %>
+
+	<% end %>
+</div>
