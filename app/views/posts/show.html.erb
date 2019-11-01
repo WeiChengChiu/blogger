@@ -7,3 +7,29 @@
   <h2><%= render_post_title(@post) %></h2>
   <p><%= @post.description %></p>
 </div>
+
+
+<% if @post.status == 1 %>
+  <div class="group">
+    <h2><%= Comment %></h2>
+    <% @publish_posts_comments.each do |c| %>
+      <p><%= c.comment %></p>
+    <% end %>
+  </div>
+
+  <div class="group">
+    <div class="span12">
+      <%= form_for @comment do |f| %>
+
+        <%= render partial: "comments/form", locals: {f: f, post_id: @post.id} %>
+
+        <%= f.submit "Save", disable_with: 'Submiting...', class: "btn btn-primary" %>
+
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+
+

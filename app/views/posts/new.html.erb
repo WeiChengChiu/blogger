@@ -1,7 +1,7 @@
 <%= render partial: 'error_msg' %>
 
 <div class="span12">
-	<%= form_for @post do |f| %>
+	<%= form_for @post, url: {action: "create"} do |f| %>
 
 		<%= render partial: "form", locals: {f: f} %>
 

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :posts, except: [:destroy] do
   	get :author_draft, on: :collection
   end
+
+  resources :comments, only: :create
 end

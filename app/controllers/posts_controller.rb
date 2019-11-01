@@ -11,7 +11,10 @@ class PostsController < ApplicationController
       @author_draft_posts = Post.draft_posts.author_posts(current_user.id).page(params['page'])
     end
         
-    def show
+    def show    
+      # post.status 1 means published post
+      @publish_posts_comments = @post.status == 1 ? @post.comments : nil
+      @comment = Comment.new
     end
 
     def new
@@ -43,7 +46,7 @@ class PostsController < ApplicationController
     private
 
     def find_post
-      @post = Post.find_by(params[:id])    
+      @post = Post.find_by(id: params[:id])    
     end
 
     def post_params

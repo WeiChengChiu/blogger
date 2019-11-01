@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
     # status 0: draft, 1: public
     belongs_to :author, class_name: 'User', foreign_key: :user_id
+    has_many :comments
 
     validates :title, presence: true
     validates :description, presence: true
@@ -12,5 +13,9 @@ class Post < ApplicationRecord
 
     def editable_by?(user)
 	    user && user == author
-	  end
+	end
+
+    def count_comment
+        Comment.where(post_id: self.id).count
+    end
 end
